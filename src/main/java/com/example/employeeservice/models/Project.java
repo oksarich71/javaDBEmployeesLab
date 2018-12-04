@@ -1,6 +1,7 @@
 package com.example.employeeservice.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,10 +31,10 @@ public class Project {
     )
     private List<Employee> employees;
 
-    public Project(Long id, String name, int duration) {
-        this.id = id;
+    public Project(String name, int duration) {
         this.name = name;
         this.duration = duration;
+        this.employees = new ArrayList<>();
     }
 
     public Project() {
@@ -69,5 +70,8 @@ public class Project {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+    public void addEmployeeToProject(Employee employee){
+        this.employees.add(employee);
     }
 }

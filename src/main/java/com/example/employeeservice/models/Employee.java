@@ -107,4 +107,7 @@ public class Employee {
     public Employee(){
 
     }
+    public void addProject(Project project){
+        this.projects.add(project);
+    }
 }
